@@ -1,249 +1,121 @@
-# CognoRise Data Science Projects Portfolio
+# 💼 Data Science Project Portfolio
+### Machine Learning | Predictive Analytics | Business Intelligence
 
-A comprehensive collection of **3 real-world data science projects** completed during the CognoRise InfoTech internship (July 2024). This portfolio showcases end-to-end machine learning project lifecycle, advanced techniques, and professional development practices.
+![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat&logo=python&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-1.3-F7931E?style=flat&logo=scikitlearn&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-2.0-FA5202?style=flat)
+![Pandas](https://img.shields.io/badge/Pandas-2.0-150458?style=flat&logo=pandas)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37726?style=flat&logo=jupyter)
 
-## 📊 Projects Overview
-
-### 1. Cinema Tickets - Exploratory Data Analysis (EDA)
-**Notebook:** `cinema-tickets.ipynb`
-
-**Problem Statement:** Analyze cinema booking patterns, revenue trends, and customer preferences to provide actionable business insights.
-
-**Key Insights Delivered:**
-- Booking trends across different time periods
-- Revenue analysis by movie type and time
-- Customer seating preferences
-- Peak booking hours and seasons
-
-**Technologies Used:**
-- Python 3.8+
-- Pandas & NumPy for data manipulation
-- Matplotlib & Seaborn for visualization
-- Plotly for interactive charts
-
-**Key Findings:**
-- Identified seasonal trends in cinema attendance
-- Analyzed revenue patterns by movie category
-- Determined optimal pricing strategies based on demand
-- Recommended marketing strategies for off-peak hours
+> End-to-end machine learning and analytics projects built during the **CognoRise InfoTech Data Science Internship (July 2024)**. Each project covers the full pipeline: data ingestion → EDA → preprocessing → modelling → evaluation.
 
 ---
 
-### 2. Credit Card Fraud Detection (XGBoost with SMOTE)
-**Notebook:** `credit-card-fraud-detection.ipynb`
+## 📂 Projects in This Repository
 
-**Problem Statement:** Develop a machine learning model to detect fraudulent credit card transactions with high precision and recall.
-
-**Dataset:**
-- 284,807 transactions
-- Class imbalance: 99.83% legitimate, 0.17% fraudulent
-- 30 PCA-transformed features for privacy
-
-**Solution Approach:**
-1. **Class Imbalance Handling:** SMOTE (Synthetic Minority Oversampling)
-2. **Model Comparison:** Logistic Regression, Random Forest, XGBoost
-3. **Selected:** XGBoost for superior performance
-4. **Hyperparameter Tuning:** Grid search for optimization
-
-**Model Performance:**
-- **Precision:** 94%
-- **Recall:** 92%
-- **ROC-AUC:** 0.96
-- **F1-Score:** 0.93
-
-**Technologies Used:**
-- Scikit-learn for preprocessing & model selection
-- Imbalanced-learn for SMOTE
-- XGBoost for gradient boosting
-- Matplotlib/Seaborn for visualizations
-
-**Business Value:**
-Can identify 92% of fraudulent transactions while maintaining high precision, reducing false positives that inconvenience legitimate customers.
+| # | Project | Technique | Key Result |
+|---|---------|-----------|------------|
+| 1 | [Retail Sales Prediction](#1-retail-sales-prediction-system) | Time-Series Forecasting | 85%+ accuracy |
+| 2 | [Credit Card Fraud Detection](#2-credit-card-fraud-detection) | Classification + SMOTE | 0.96 ROC-AUC |
+| 3 | [Cinema Tickets EDA](#3-cinema-tickets-eda) | Exploratory Data Analysis | 10K+ bookings analyzed |
 
 ---
 
-### 3. Superstore Sales Prediction (Time-Series Forecasting)
-**Notebook:** `super-store-sales-prediction.ipynb`
+## 1. 📊 Retail Sales Prediction System
 
-**Problem Statement:** Forecast superstore sales using time-series analysis and machine learning to enable better inventory management and revenue planning.
+> *Forecasting future retail revenue to support inventory planning and business decision-making.*
 
-**Dataset Overview:**
-- Historical sales data across multiple product categories
-- Time-series data spanning multiple years
-- Regional and seasonal variations
+**Problem:** Retail businesses struggle to optimize stock and staffing without reliable demand forecasts.
 
-**Feature Engineering:**
-- Temporal features: Year, Month, Quarter, Day of Week
-- Lag features for trend analysis
-- Rolling statistics for smoothing
-- Category and regional encodings
-- Holiday and seasonal indicators
+**Solution:** Built an ensemble time-series forecasting pipeline using ARIMA and XGBoost on historical superstore sales data.
 
-**Modeling Approach:**
-1. Exploratory Data Analysis (EDA) with trend decomposition
-2. Stationarity testing (ADF test)
-3. Feature engineering for time-series
-4. Multiple models: ARIMA, Prophet, XGBoost
-5. Ensemble approach for better predictions
+### Highlights
+- Performed comprehensive **EDA** to uncover seasonal trends, regional patterns, and product category performance
+- Engineered time-based features (lag variables, rolling averages, seasonality indicators)
+- Benchmarked ARIMA, Prophet, and XGBoost — XGBoost ensemble achieved **85%+ prediction accuracy**
+- Generated business insights on top-performing categories and regions
 
-**Model Results:**
-- **RMSE:** Achieved low root mean square error
-- **MAE:** Mean absolute error within acceptable range
-- **Accuracy:** 85%+ prediction accuracy on test set
+### Tech Stack
+`Python` `Pandas` `NumPy` `Scikit-learn` `XGBoost` `Statsmodels` `Facebook Prophet` `Matplotlib` `Seaborn`
 
-**Key Implementations:**
-- Time-series decomposition
-- Stationarity transformation
-- ARIMA modeling
-- Facebook Prophet for trend forecasting
-- XGBoost for non-linear patterns
-
-**Business Applications:**
-- Inventory optimization
-- Revenue forecasting
-- Seasonal planning
-- Budget allocation
+**Notebook:** [`super-store-sales-prediction.ipynb`](./super-store-sales-prediction.ipynb)
 
 ---
 
-## 📈 Project Statistics
+## 2. 🔐 Credit Card Fraud Detection
 
-| Metric | Value |
-|--------|-------|
-| Total Code Lines | 1500+ |
-| Total Documentation | Comprehensive |
-| Difficulty Levels | Beginner to Advanced |
-| Time Investment | 7-10 weeks |
-| Projects Completed | 3 |
+> *Building a robust fraud classifier that catches 92% of fraudulent transactions without flooding legitimate users with false alerts.*
 
----
+**Problem:** Credit card fraud datasets are highly imbalanced (fraud < 1% of transactions), making standard classifiers ineffective.
 
-## 💻 Technologies & Tools
+**Solution:** Applied **SMOTE** (Synthetic Minority Oversampling Technique) to handle class imbalance and trained an XGBoost classifier with hyperparameter tuning.
 
-**Languages & Libraries:**
-- Python 3.8+
-- Pandas & NumPy
-- Scikit-learn
-- XGBoost
-- Matplotlib & Seaborn
-- Plotly
-- Imbalanced-learn (SMOTE)
-- Statsmodels (Time-series)
+### Highlights
+- Handled severe class imbalance using **SMOTE oversampling**
+- Achieved **94% Precision | 92% Recall | 0.96 ROC-AUC**
+- Optimized decision threshold for business-appropriate false positive rates
+- Visualized feature importance to identify top fraud indicators
 
-**Methods & Techniques:**
-- Exploratory Data Analysis (EDA)
-- Data Cleaning & Preprocessing
-- Feature Engineering & Selection
-- Class Imbalance Handling (SMOTE)
-- Hyperparameter Tuning (Grid Search)
-- Time-Series Decomposition
-- Model Comparison & Selection
-- Cross-Validation
-- Performance Evaluation (Multiple Metrics)
+### Tech Stack
+`Python` `Scikit-learn` `XGBoost` `Imbalanced-learn` `Pandas` `Matplotlib` `Seaborn`
+
+**Notebook:** [`credit-card-fraud-detection.ipynb`](./credit-card-fraud-detection.ipynb)
 
 ---
 
-## 📁 Repository Structure
+## 3. 🎬 Cinema Tickets EDA
 
-```
-Cong-Data-Science-task/
-├── cinema-tickets.ipynb              # EDA Project Notebook
-├── credit-card-fraud-detection.ipynb # Fraud Detection Notebook
-├── super-store-sales-prediction.ipynb # Sales Forecasting Notebook
-├── README.md                          # This file
-└── requirements.txt                   # Project dependencies
-```
+> *Uncovering booking patterns, revenue drivers, and audience behaviour from 10,000+ cinema transactions.*
+
+**Problem:** Cinema operators lack visibility into which shows, time slots, and ticket types drive the most revenue.
+
+**Solution:** Conducted deep **Exploratory Data Analysis** on a cinema ticketing dataset to surface actionable business intelligence.
+
+### Highlights
+- Analyzed **10,000+ booking records** across movie types, time slots, and pricing tiers
+- Identified peak booking windows and highest-revenue show categories
+- Built visualizations for booking heatmaps, revenue by genre, and pricing sensitivity
+- Delivered recommendations for dynamic pricing and inventory allocation
+
+### Tech Stack
+`Python` `Pandas` `NumPy` `Matplotlib` `Seaborn` `Plotly`
+
+**Notebook:** [`cinema-tickets.ipynb`](./cinema-tickets.ipynb)
 
 ---
 
-## 🚀 How to Use
+## 🚀 Getting Started
 
-### 1. Clone the Repository
 ```bash
+# Clone the repository
 git clone https://github.com/Iqbalmeerajohn/Cong-Data-Science-task.git
 cd Cong-Data-Science-task
-```
 
-### 2. Install Dependencies
-```bash
+# Install dependencies
 pip install -r requirements.txt
-```
 
-### 3. Run the Projects
-Open each notebook in Jupyter:
-```bash
-jupyter notebook cinema-tickets.ipynb
-jupyter notebook credit-card-fraud-detection.ipynb
-jupyter notebook super-store-sales-prediction.ipynb
+# Launch Jupyter
+jupyter notebook
 ```
 
 ---
 
-## 📚 Key Learnings
+## 🛠️ Full Tech Stack
 
-✅ **End-to-End ML Pipeline Development**
-- Data loading, cleaning, preprocessing
-- Feature engineering and selection
-- Model training and evaluation
-- Hyperparameter optimization
-
-✅ **Advanced Machine Learning Techniques**
-- Class imbalance handling (SMOTE)
-- Ensemble methods (XGBoost)
-- Time-series forecasting
-- Cross-validation strategies
-
-✅ **Professional Development Practices**
-- Clean, well-documented code
-- Version control with Git
-- Comprehensive project documentation
-- Business-focused analysis
+| Category | Tools |
+|----------|-------|
+| **Languages** | Python 3.8+ |
+| **ML Libraries** | Scikit-learn, XGBoost, Imbalanced-learn |
+| **Time Series** | Statsmodels (ARIMA), Facebook Prophet |
+| **Data Processing** | Pandas, NumPy |
+| **Visualization** | Matplotlib, Seaborn, Plotly |
+| **Environment** | Jupyter Notebook |
 
 ---
 
-## 🎯 Portfolio Highlights
+## 👨‍💻 Author
 
-This portfolio demonstrates:
-- **Real-world problem solving** from multiple domains (EDA, Classification, Forecasting)
-- **Advanced techniques** (SMOTE, XGBoost, ARIMA, Prophet)
-- **Quantified business impact** with specific metrics
-- **Professional documentation** and code organization
-- **Diverse skill set** in data science and machine learning
-
----
-
-## 👨‍💼 Author
-
-**Sheik Iqbal Meera John**
-- Data Science Enthusiast
-- CognoRise InfoTech Intern (July 2024)
-- GITAM Deemed University Student
-- LinkedIn: [Sheik Iqbal Meera John](https://linkedin.com/in/sheik-iqbal-meera-john-056191253)
-
----
-
-## 📧 Contact & Feedback
-
-Feel free to reach out for any questions, feedback, or collaboration opportunities!
-- LinkedIn: [Connect](https://linkedin.com/in/sheik-iqbal-meera-john-056191253)
-- GitHub: [@Iqbalmeerajohn](https://github.com/Iqbalmeerajohn)
-
----
-
-## 📄 License
-
-MIT License - Feel free to use this portfolio for educational and professional purposes.
-
----
-
-## 🙏 Acknowledgments
-
-Special thanks to:
-- **CognoRise InfoTech** for the internship opportunity
-- **GITAM Deemed University** for academic foundation
-- All mentors and colleagues who provided feedback and support
-
----
-
-**Last Updated:** January 2026
-**Status:** ✅ Production Ready
+**Sheik Iqbal Meera John**  
+B.Tech CSE (Data Science) — GITAM University, 2026  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat&logo=linkedin)](https://linkedin.com/in/sheik-iqbal-meera-john-056191253)  
+[![GitHub](https://img.shields.io/badge/GitHub-Iqbalmeerajohn-181717?style=flat&logo=github)](https://github.com/Iqbalmeerajohn)
